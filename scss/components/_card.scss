@@ -1,0 +1,155 @@
+.card {
+  // functionality
+  height: 45rem;
+  perspective: 150rem;
+  position: relative;
+  &__side {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: all 0.3s;
+    &--front {
+      background-color: $color-white;
+      @include respond(laptop) {
+        width: 40rem;
+      }
+    }
+    &--back {
+      transform: rotateY(-180deg);
+      @include respond(laptop) {
+        width: 40rem;
+      }
+      &--1 {
+        background-image: linear-gradient(
+          to right,
+          $color-primary-3-light,
+          $color-primary-3
+        );
+      }
+      &--2 {
+        background-image: linear-gradient(
+          to right,
+          $color-primary-4-light,
+          $color-primary-4
+        );
+      }
+      &--3 {
+        background-image: linear-gradient(
+          to right,
+          $color-primary-1-light,
+          $color-primary-1
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // Font side styling
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: overlay;
+
+    &--1 {
+      background-image: linear-gradient(
+          to right,
+          $color-primary-3-light,
+          $color-primary-3
+        ),
+        url("../../img/s-1.jpg");
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right,
+          $color-primary-3-light,
+          $color-primary-3
+        ),
+        url("../../img/s-2.jpg");
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right,
+          $color-primary-3-light,
+          $color-primary-3
+        ),
+        url("../../img/s-3.jpg");
+    }
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    top: 5rem;
+    right: 0rem;
+    text-align: right;
+    width: 50%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-3-light, 0.8),
+        rgba($color-primary-3, 0.8)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-4-light, 0.2),
+        rgba($color-primary-4, 0.8)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-1-light, 0.2),
+        rgba($color-primary-1, 0.8)
+      );
+    }
+  }
+
+  &__details {
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: auto;
+      li {
+        text-align: center;
+        font-size: $default-font-size;
+        padding: 0.5rem;
+      }
+    }
+  }
+  &__cta {
+    @include absCenter;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+  }
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+}

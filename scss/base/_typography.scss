@@ -1,0 +1,91 @@
+body {
+  font-family: "Josefin Sans", sans-serif;
+  color: $color-black;
+  font-size: $default-font-size;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 500;
+    letter-spacing: 2.5rem;
+    animation-name: scaleToCenter;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    padding-left: 2rem;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.5rem;
+    animation-name: scaleToCenter;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+  }
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.5s;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-2-light,
+    $color-primary-2
+  );
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  &:hover {
+    transform: scale(1.1);
+    text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  }
+}
+.heading-secondary-2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.5s;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-4-light,
+    $color-grey-light
+  );
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  &:hover {
+    transform: scale(1.1);
+    text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+  // That not last-child
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

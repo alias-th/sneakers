@@ -1,0 +1,40 @@
+@mixin clearFix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY
+// ORDER : base + typography > general layout + grid + page layout > components
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == laptop {
+    @media (max-width: 63em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: 41em) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile-m {
+    @media (max-width: 31em) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile-s {
+    @media (max-width: 22em) {
+      @content;
+    }
+  }
+}

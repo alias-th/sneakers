@@ -1,0 +1,14 @@
+.header {
+  background-image: linear-gradient(
+      rgba($color-primary-1-light, 0.5),
+      rgba($color-primary-1, 0.5)
+    ),
+    url("../../img/c-1.jpg");
+  background-size: cover;
+  background-position: top;
+  height: 100vh;
+  &__text-box {
+    @include absCenter;
+    text-align: center;
+  }
+}

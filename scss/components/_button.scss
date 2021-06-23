@@ -1,0 +1,91 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: none;
+    font-size: $default-font-size;
+    color: $color-white;
+    background-color: $color-black;
+    padding: 2rem 4rem;
+    border-radius: 5rem;
+    position: relative;
+    transition: all 0.3s;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: translateY(0.2rem);
+    box-shadow: 0 1rem 1rem rgba($color: #000000, $alpha: 0.5);
+    &::after {
+      transform: scaleX(1.5) scaleY(1.5);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(0.5rem);
+    box-shadow: 0 1rem 1rem rgba($color: #000000, $alpha: 0.5);
+  }
+  &-animated {
+    animation-name: bottomToCenter;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.6s;
+    animation-fill-mode: backwards;
+  }
+  &::after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    transition: all 0.3s;
+
+    background-color: $color-black;
+  }
+
+  &-text {
+    &-white {
+      position: relative;
+      background-color: $color-black;
+      color: white;
+      padding: 2rem 2.5rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      &:hover {
+        background-color: $color-grey-light;
+        transform: translateY(0.2rem);
+        border-bottom: 1px solid $color-black;
+        color: $color-black;
+        text-transform: uppercase;
+        font-weight: 700;
+        &::after {
+          transform: scaleX(1.5) scaleY(1.5);
+          opacity: 0;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s;
+
+        background-color: $color-black;
+      }
+    }
+  }
+}

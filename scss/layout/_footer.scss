@@ -1,0 +1,15 @@
+.footer {
+  height: 30vh;
+  background-color: $color-primary-1;
+  padding: 2rem;
+  &__logo-box {
+    text-align: center;
+    img {
+      width: 10rem;
+    }
+  }
+
+  @include respond(laptop) {
+    height: 20rem;
+  }
+}

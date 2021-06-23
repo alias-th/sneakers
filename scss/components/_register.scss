@@ -1,0 +1,51 @@
+.register {
+  width: 100%;
+  height: 50rem;
+  margin: auto;
+  background-image: linear-gradient(
+      80deg,
+      rgba(183, 206, 255, 0.5) 50%,
+      50%,
+      transparent
+    ),
+    url(../../img/c-3.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1rem 1rem rgba($color: #000000, $alpha: 0.45);
+  @include respond(tablet) {
+    background-image: linear-gradient(
+        rgba(183, 206, 255, 0.5) 100%,
+        50%,
+        transparent
+      ),
+      url(../../img/c-3.jpg);
+  }
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+    @include respond(laptop) {
+      width: 100%;
+    }
+    &--group:not(:last-child) {
+      width: 100%;
+      padding: 1rem;
+      margin: 3rem;
+      border-radius: 5px;
+      input {
+        width: 100%;
+        height: 4rem;
+        padding: 2rem;
+        font-size: $default-font-size;
+        border: none;
+        transition: all 0.3s;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 1rem 1rem rgba($color: #000000, $alpha: 0.5);
+          border-bottom: 3px solid black;
+        }
+      }
+    }
+  }
+}
